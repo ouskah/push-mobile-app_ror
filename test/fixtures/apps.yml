@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  devices_count: 1
+  image: MyString
+  certificat_ios: MyString
+  token: MyString
+
+two:
+  name: MyString
+  devices_count: 1
+  image: MyString
+  certificat_ios: MyString
+  token: MyString

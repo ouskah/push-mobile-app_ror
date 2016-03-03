@@ -18,12 +18,17 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
 
-# slim
-gem 'slim', '~> 3.0', '>= 3.0.6'
+# slim-rails
+gem 'slim-rails', '~> 3.0', '>= 3.0.1'
 
 
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
+
+# generator de formulaires
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
 
 
 # compass
