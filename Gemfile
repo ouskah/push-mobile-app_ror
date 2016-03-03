@@ -30,6 +30,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 
+# internationalisation pour  traduction en fr
+gem 'rails-i18n', '~> 4.0', '>= 4.0.8'
 
 # compass
 # gem 'compass', '~> 1.0', '>= 1.0.3'
