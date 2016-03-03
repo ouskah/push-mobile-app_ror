@@ -5,7 +5,7 @@ class AppsController < ApplicationController
     
     
   def index
-      @apps = App.where(user_id: current_user.id).all
+      @apps = App.where(user_id: current_user.id).page(params[:page])
   end
 
   def show

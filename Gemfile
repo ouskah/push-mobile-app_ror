@@ -37,6 +37,10 @@ gem 'rails-i18n', '~> 4.0', '>= 4.0.8'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
 
 
+# pagination
+gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
+
+
 
 # compass
 # gem 'compass', '~> 1.0', '>= 1.0.3'

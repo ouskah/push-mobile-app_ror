@@ -1,3 +1,11 @@
+h1 Mes applications
+
+br
+
+p = link_to "Ajouter une application", new_app_path, class: "btn btn-primary"
+
+br  
+
 table.table
     thead
         tr
@@ -13,6 +21,8 @@ table.table
                     = link_to "Editer", edit_app_path(app), class: "btn btn-primary"
                     '  
                     = link_to "Supprimer", app, method: :delete, class: "btn btn-danger", data: {confirm: 'Sûr ?'}
+                    
+
+= paginate @apps
 
 
-= link_to "Ajouter une application", new_app_path, class: "btn btn-primary"
