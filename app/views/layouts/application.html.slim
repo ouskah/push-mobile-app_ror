@@ -10,6 +10,7 @@ html
         title = yield(:title)
 
         = stylesheet_link_tag "application"
+        = csrf_meta_tags
     
     
     body
@@ -25,10 +26,23 @@ html
                             
                             
                     ul.nav.navbar-nav.navbar-right
-                        li 
-                            a Se connecter
-                            
+                        - if user_signed_in?
+                            li = link_to "Se déconnecter", destroy_user_session_path, method: :delete
+                        - else
+                            li = link_to "Se connecter",  new_user_session_path
+                            li = link_to "S'inscrire", new_user_registration_path
+
                 
         .main-content
             .container
+                - flash.each do |type, message|
+                    div class= flash_class(type)
+                        = message
+                        
+                        
+                        
                 = yield
+                
+                
+                
+        = javascript_include_tag "application"        
