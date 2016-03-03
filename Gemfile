@@ -26,6 +26,9 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 
+# compass
+# gem 'compass', '~> 1.0', '>= 1.0.3'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
