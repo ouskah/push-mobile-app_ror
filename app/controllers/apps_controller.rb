@@ -1,5 +1,11 @@
 class AppsController < ApplicationController
+    before_filter :set_app, except: [:index, :new, :create]
+    authorize_resource
+    
+    
+    
   def index
+      @apps = App.where(user_id: current_user.id).all
   end
 
   def show
@@ -19,8 +25,9 @@ class AppsController < ApplicationController
 
   def create
       @app = App.new(apps_params) # on specifie les parametres que l'on autorise
+      @app.user_id = current_user.id # l'utisilateur courant est proprio de l'appli créée
       if @app.save
-          reditect_to @app, success: "L'application #{@aap.name} a bien été créée"
+          redirect_to @app, success: "L'application #{@app.name} a bien été créée"
       else
           flash.now[:error] = "Certains champs n'ont pas été correctement remplis"
           render "new"
@@ -36,7 +43,11 @@ protected
     def apps_params # pour nettoyer les parametres => parametres que l'on autorise
         params.require(:app).permit(:name, :certificat_ios, :image)
     end
-
+    
+    def set_app
+        @app = App.find(params[:id])
+    
+    end
     
     
     
