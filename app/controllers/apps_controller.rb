@@ -16,7 +16,7 @@ class AppsController < ApplicationController
 
   def update
       if @app.update(apps_params)
-          redirect_to @app, success: "L'application #{@app.name} a bien été mise à jour"
+          redirect_to @app, flash: {success: "L'application #{@app.name} a bien été mise à jour"}
       else
         flash.now[:error] = "Certains champs n'ont pas été correctement remplis"
         render "edit"  
@@ -33,7 +33,7 @@ class AppsController < ApplicationController
       @app = App.new(apps_params) # on specifie les parametres que l'on autorise
       @app.user_id = current_user.id # l'utisilateur courant est proprio de l'appli créée
       if @app.save
-          redirect_to @app, success: "L'application #{@app.name} a bien été créée"
+          redirect_to @app, flash: {success: "L'application #{@app.name} a bien été créée"}
       else
           flash.now[:error] = "Certains champs n'ont pas été correctement remplis"
           render "new"
@@ -41,6 +41,8 @@ class AppsController < ApplicationController
   end
 
   def destroy
+      @app.destroy 
+          redirect_to apps_path, flash: {success: "L'application #{@app.name} a bien été supprimée"}          
   end
 
 
