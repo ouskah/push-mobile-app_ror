@@ -41,6 +41,10 @@ gem 'cancan', '~> 1.6', '>= 1.6.10'
 gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
 
 
+# gestion upload des fichiers
+gem 'carrierwave', '~> 0.10.0'
+
+
 
 # compass
 # gem 'compass', '~> 1.0', '>= 1.0.3'

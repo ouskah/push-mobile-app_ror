@@ -15,6 +15,12 @@ class AppsController < ApplicationController
   end
 
   def update
+      if @app.update(apps_params)
+          redirect_to @app, success: "L'application #{@app.name} a bien été mise à jour"
+      else
+        flash.now[:error] = "Certains champs n'ont pas été correctement remplis"
+        render "edit"  
+      end
   end
 
   def new
@@ -38,7 +44,7 @@ class AppsController < ApplicationController
   end
 
 
-protected
+    protected
 
     def apps_params # pour nettoyer les parametres => parametres que l'on autorise
         params.require(:app).permit(:name, :certificat_ios, :image)

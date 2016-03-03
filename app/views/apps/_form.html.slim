@@ -2,5 +2,8 @@
 
     = f.input :name
     = f.input :image
-    = f.input :certificat_ios, label: "Certificat"
-    = f.button :submit, "Créer l'application"
+    = f.input :certificat_ios, as: :file, label: "Certificat"
+    - if @app.new_record?
+        = f.button :submit, "Créer l'application"
+    else
+        = f.button :submit, "Editer l'application"
