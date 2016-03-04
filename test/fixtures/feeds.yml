@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  push_date: 2016-03-04 02:53:25
+  app_id: 1
+
+two:
+  name: MyString
+  url: MyString
+  push_date: 2016-03-04 02:53:25
+  app_id: 1

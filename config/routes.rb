@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     
     resources :apps do 
         resources :devices, only: [:new, :show, :destroy]
+        resources :feeds
     
     end 
     
