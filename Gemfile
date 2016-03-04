@@ -45,6 +45,9 @@ gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
 gem 'carrierwave', '~> 0.10.0'
 
 
+# envoi de notifications push
+gem 'pushmeup', '~> 0.3.0'
+
 
 # compass
 # gem 'compass', '~> 1.0', '>= 1.0.3'
