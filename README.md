@@ -3,7 +3,7 @@
 <br />
 
 ~~~ 
-Mission : Création d'une applicationde gestion de Push d'applications iOS
+Mission : Création d'une application de gestion de Push d'applications iOS
 ~~~
 
 <br />
