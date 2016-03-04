@@ -25,7 +25,7 @@ class FeedsController < ApplicationController
   # POST /feeds
   # POST /feeds.json
   def create
-      @feed = Feed.new(feed_params)
+      @feed = @app.feeds.new(feed_params)
       begin
         require "rss"
         items = RSS::Parser.parse(open(@feed.url).read, false).items

@@ -26,13 +26,13 @@ br
         tbody
             - @app.feeds.find_each do |feed|
                 tr
-                    td = device.name
-                    td = device.url
-                    td = device.push_date
+                    td = feed.name
+                    td = feed.url
+                    td = "Il ya #{time_ago_in_words feed.push_date}"
                     td
                         = link_to "Editer", edit_app_feed_path(@app, feed), class: "btn btn-primary"
                         ' 
-                        = link_to "Supprimer", [@app, device], method: :delete, class: "btn btn-danger"
+                        = link_to "Supprimer", [@app, feed], method: :delete, class: "btn btn-danger"
 
 p= link_to "Ajouter un flux", new_app_feed_path(@app), class: "btn btn-primary" 
     
