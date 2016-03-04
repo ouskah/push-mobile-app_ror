@@ -9,6 +9,7 @@ class AppsController < ApplicationController
   end
 
   def show
+      @devices =  @app.devices.page(params[:page])
   end
 
   def edit

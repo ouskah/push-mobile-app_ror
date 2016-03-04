@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
  
+  get 'devices/new'
+
+  get 'devices/destroy'
+
     root "pages#index"
     
     devise_for :users
     
-    resources :apps
+    resources :apps do 
+        resources :devices, only: [:new, :show, :destroy]
+    
+    end 
     
     
     

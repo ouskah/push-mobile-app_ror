@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  platform: MyString
+  version: MyString
+  uuid: MyString
+  model: MyString
+  token: MyString
+  app_id: 1
+
+two:
+  platform: MyString
+  version: MyString
+  uuid: MyString
+  model: MyString
+  token: MyString
+  app_id: 1

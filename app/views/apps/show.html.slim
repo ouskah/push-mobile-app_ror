@@ -1,2 +1,32 @@
-h1 Apps#show
-p Find me in app/views/apps/show.html.slim
+h1 = @app.name
+
+= url_for new_app_device_url(@app, key: @app.token)
+
+ul
+    li <strong>platform</strong> iOS
+    li <strong>version</strong> 7.1
+    li <strong>uuid</strong> XXXX-XXX-XXX
+    li <strong>model</strong> iPad3,4
+    li <strong>token</strong> 
+    
+    br  
+
+table.table
+    thead
+        tr
+            th Platform
+            th Version
+            th Model
+            th Actions
+    tbody
+        - @devices.page(params[:page]).find_each do |device|
+            tr
+                td = device.platform
+                td = device.version
+                td = device.model
+                td
+                    = link_to "Tester", [@app, device], class: "btn btn-primary"
+                    ' 
+                    = link_to "Supprimer", [@app, device], method: :delete, class: "btn btn-danger"
+
+= paginate @devices

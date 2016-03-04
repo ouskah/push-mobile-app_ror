@@ -10,12 +10,12 @@ table.table
     thead
         tr
             th Nom
-            th Nombre de périphérique
+            th Nombre-de-périphériques
             th Actions
     tbody
         - @apps.find_each do |app|
             tr
-                td = app.name
+                td = link_to app.name, app
                 td = app.devices_count
                 td
                     = link_to "Editer", edit_app_path(app), class: "btn btn-primary"
